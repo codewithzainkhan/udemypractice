@@ -1,0 +1,8 @@
+import pyautogui as pt
+import time
+
+while True:
+
+
+   time.sleep(5)
+   print(pt.position())
