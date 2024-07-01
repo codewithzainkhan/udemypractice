@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #151414;
+}
+
+header {
+    background-color: #ff69b4;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    
+}
+.fade-in {
+    opacity: 0;
+    animation: fade-in-text 2s ease-in-out infinite;
+}
+
+@keyframes fade-in-text {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.intro {
+    margin-bottom: 20px;
+}
+
+.gift-ideas {
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-left: 5px solid #ff69b4;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Add these styles for balloon animation */
+
+@keyframes balloon-fall {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 1;
+    }
+}
+
+.balloon {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: #942d10;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    animation: balloon-fall 5s linear infinite;
+}
+
+.balloon span {
+    display: block; /* Ensure text is on a new line */
+}
+
+
+
+.balloon:nth-child(odd) {
+    transform: rotate(5deg);
+}
+
+.balloon:nth-child(even) {
+    transform: rotate(-5deg);
+}
+
+.balloon:nth-child(1),
+.balloon:nth-child(3),
+.balloon:nth-child(5) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(2),
+.balloon:nth-child(4),
+.balloon:nth-child(6) {
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.balloon:nth-child(7),
+.balloon:nth-child(8) {
+    left: 80%;
+    animation-delay: s; /* Adjust animation delay for the 7th and 8th balloons */
+}
+
+/* Additional styles to prevent overlapping */
+.balloon:nth-child(3),
+.balloon:nth-child(4),
+.balloon:nth-child(5),
+.balloon:nth-child(6),
+.balloon:nth-child(7),
+.balloon:nth-child(8) {
+    top: 50%; /* Adjust positioning to prevent overlap */
+}
+
+.feedback-section {
+    text-align: center;
+    margin-top: 50px;
+    height: 80vh; /* Adjust height as needed */
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+#responseMessage {
+    margin-top: 20px;
+    font-style: italic;
+    display: none; /* Hide initially */
+}
+
+/* Custom scrollbar styles */
+.feedback-section::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+}
+
+.feedback-section::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the scrollbar track */
+}
+
+.feedback-section::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Rounded corners of the scrollbar thumb */
+}
+
+.feedback-section::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar thumb on hover */
+}
+
