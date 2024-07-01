@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <section class="message">
+        <h2 class="fade-in">Happy Birthday, Eman!</h2>
+    </section>
+</header>
+
+    <div class="balloon">
+        <span>LOVE
+               YOU
+        </span>
+    </div>
+    <div class="balloon">
+        <span>LOVE
+            YOU
+     </span>
+    </div>
+    <div class="balloon">
+        <span>LOVE
+            YOU
+     </span>
+    </div>
+    <div class="balloon">
+        <span>LOVE
+            YOU
+     </span>
+    </div>
+    <div class="balloon">
+        <span>LOVE
+            YOU
+     </span>
+    </div>
+    <div class="balloon">
+        <span>LOVE
+            YOU
+     </span>
+        </div>
+        <div class="balloon">
+            <span>LOVE
+                YOU
+         </span>
+        </div>
+        <div class="balloon">
+            <span>LOVE
+                YOU
+         </span>
+            </div>
+    
+    <main>
+         
+        
+        <section class="intro">
+            <p>Dear Eman,</p>
+            <p>On your special day, I want to let you know how much you mean to me.</p>
+            <p>You are my world, and I am so grateful to have you in my life.</p>
+            <p>Here's to many more birthdays together!</p>
+            <p>Love,</p>
+            <p>Zain Khan</p>
+        </section>
+        <section class="gift-ideas">
+            <h2>You are my</h2>
+            <ul>
+                <li>Pookie</li>
+                <li>Love</li>
+                <li>Jana</li>
+            </ul>
+        </section>
+        <section class="feedback-section">
+            <h3>Did you like it?</h3>
+            <div class="buttons">
+                <button id="yesBtn">Yes</button>
+                <button id="noBtn">No</button>
+            </div>
+            <p id="responseMessage"></p>
+        </section>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get buttons and response message element
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const responseMessage = document.getElementById('responseMessage');
+
+    // Function to generate random position adjustment
+    function getRandomPosition() {
+        const range = 30; // Range in pixels for position adjustment
+        const randomX = Math.random() * range * 2 - range; // Random value between -range to +range
+        const randomY = Math.random() * range * 2 - range; // Random value between -range to +range
+        return { x: randomX, y: randomY };
+    }
+
+    // Function to change position of 'No' button
+    function changeNoButtonPosition() {
+        const position = getRandomPosition();
+        const currentStyle = getComputedStyle(noBtn);
+        const currentLeft = parseInt(currentStyle.left, 10);
+        const currentTop = parseInt(currentStyle.top, 10);
+        noBtn.style.left = `${currentLeft + position.x}px`;
+        noBtn.style.top = `${currentTop + position.y}px`;
+    }
+
+    // Initial position for 'No' button
+    changeNoButtonPosition();
+
+    // Event listener for 'Yes' button click
+    yesBtn.addEventListener('click', function() {
+        responseMessage.textContent = "Hehe, I knew it!";
+        responseMessage.style.display = 'block';
+        yesBtn.style.display = 'none';
+        noBtn.style.display = 'none';
+    });
+
+    // Event listener for 'No' button click
+    noBtn.addEventListener('click', function() {
+        changeNoButtonPosition(); // Change position when 'No' button is clicked
+    });
+});
+        </script>
+        
+    </main>
+    <footer>
+        <p>Designed with love by Zain hehe</p>
+    </footer>
+</body>
+</html>
